@@ -122,7 +122,7 @@ Last Modified: September 25, 2025
         }
 
         .panel-right {
-        width: 66.6667%;
+        width: 66%;
         background: var(--right);
         padding: 18px 20px;
         color: #073b4c;
@@ -190,6 +190,42 @@ Last Modified: September 25, 2025
 
         .table--striped tbody tr:nth-child(even) {
         background: rgba(0,0,0,0.04);
+        }
+
+        .olist {
+            list-style: decimal;
+            padding-left: 14px;
+            margin: 0;
+            display: grid;
+            gap: 6px;
+        }
+
+        .olist > li::marker {
+            font-weight: 800;
+            color: #063645;
+        }
+
+        .sublist {
+            list-style: upper-latin;
+            padding-left: 12px;
+            margin-top: 6px;
+        }
+        .sublist > li::marker {
+            color: #0b5b6b;
+        }
+
+        .gh-image {
+        width: 240px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 2px solid rgba(255,255,255,0.7);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        display: block;
+        }
+        .gh-link:hover .gh-image, .gh-image {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(0,0,0,0.20);
         }
 
         .stack {
