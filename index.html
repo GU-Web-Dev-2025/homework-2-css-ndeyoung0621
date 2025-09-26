@@ -52,18 +52,39 @@ Last Modified: September 25, 2025
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
+        align-items: center;
         }
 
         .nav-link {
         color: #1a1a1a;
         text-decoration: none;
         font-weight: 600;
+        padding: 2px 4px;
+        border-radius: 6px;
         }
+        .nav-link:focus-visible,
+        .nav-link:hover { background: rgba(0,0,0,0.06); outline: none; }
 
-        .nav-sep {
-        opacity: 0.5;
-        user-select: none;
+        .nav-sep { opacity: 0.5; user-select: none; }
+
+        /* fun shape at right side of nav bar */
+        .nav-fun {
+        margin-left: auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         }
+        .fun-shape {
+        width: 28px;
+        height: 28px;
+        border-radius: 35%;
+        background: radial-gradient(circle at 30% 30%, #fff 0%, #b2ebf2 30%, #81d4fa 60%, #4fc3f7 100%);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2) inset, 0 2px 8px rgba(0,0,0,0.15);
+        transform: rotate(18deg);
+        transition: transform .25s ease;
+        }
+        .fun-shape:hover { transform: rotate(18deg) scale(1.07); }
+
 
         .panels {
         display: flex;
@@ -235,38 +256,42 @@ Last Modified: September 25, 2025
     </style>
 </head>
 <body class="page theme">
-  <div class="visual" role="img" aria-label="Three-panel layout mockup">
+  <div class="visual">
     <div class="topbar">
+      <!-- In-page navigation (fragment links) -->
       <nav class="nav">
-        <a class="nav-link" href="index.html">Home</a><span class="nav-sep">|</span>
-        <a class="nav-link" href="page2.html">Career Summary</a><span class="nav-sep">|</span>
-        <a class="nav-link" href="page3.html">Education and Qualifications</a><span class="nav-sep">|</span>
-        <a class="nav-link" href="page4.html">Interests and Hobbies</a>
+        <a class="nav-link" href="#profile">Profile</a><span class="nav-sep">|</span>
+        <a class="nav-link" href="#skills">Skills</a><span class="nav-sep">|</span>
+        <a class="nav-link" href="#career">Career</a><span class="nav-sep">|</span>
+        <a class="nav-link" href="#education">Education</a><span class="nav-sep">|</span>
+        <a class="nav-link" href="#interests">Interests</a>
       </nav>
+      <div class="nav-fun" aria-hidden="true">
+        <div class="fun-shape"></div>
+      </div>
     </div>
 
     <div class="panels">
-      <div class="panel-left">
+      <aside class="panel-left section" id="profile">
         <div class="profile">
           <img class="profile-img" src="image.jpeg" alt="Nick D" />
           <div class="profile-name">Nick DeYoung</div>
           <div class="profile-title">Software Engineer</div>
           <div class="profile-summary">
-            Nick DeYoung is a dedicated Computer Scientist at Gonzaga University with a strong foundation in software engineering, data-driven problem solving, and system optimization. Specializing in full-stack development, algorithm design, and scalable cloud-based applications, he has demonstrated expertise in both academic research and applied technology. His skill set includes advanced proficiency in Java, Python, C++, and OCaml, as well as hands-on experience with containerized DevOps pipelines, database architecture, and distributed systems. Above is a picture of him, he looks like snoopy.
+            Nick DeYoung is a dedicated Computer Scientist at Gonzaga University with a strong foundation in software engineering, data-driven problem solving, and system optimization. Specializing in full-stack development, algorithm design, and scalable cloud-based applications, he has demonstrated expertise in both academic research and applied technology. His skill set includes advanced proficiency in Java, Python, C++, and OCaml, as well as hands-on experience with containerized DevOps pipelines, database architecture, and distributed systems. Below is a picture of him, he looks like snoopy.
           </div>
         </div>
-    </div>
+      </aside>
 
       <section class="panel-right">
-
-        <ul class="skills-list">
+        <ul class="skills-list section" id="skills">
           <li class="skills-item">Applied cryptography</li>
           <li class="skills-item">Compiler/Virtual Machine Construction</li>
           <li class="skills-item">Functional Programming Paradigms</li>
         </ul>
 
-        <section class="section">
-          <h2 class="section-title">Career Summary</h2>
+        <section class="section" id="career">
+          <h2 class="section-title"><a class="section-link" href="#career">Career Summary</a></h2>
           <div class="table-card table--striped table--compact">
             <table class="table" border="2">
               <thead>
@@ -301,8 +326,8 @@ Last Modified: September 25, 2025
           </div>
         </section>
 
-        <section class="section">
-          <h2 class="section-title">Education and Qualifications</h2>
+        <section class="section" id="education">
+          <h2 class="section-title"><a class="section-link" href="#education">Education and Qualifications</a></h2>
           <div class="stack">
             <div class="table-card table--striped table--compact">
               <table class="table" border="2">
@@ -390,8 +415,8 @@ Last Modified: September 25, 2025
           </div>
         </section>
 
-        <section class="section">
-          <h2 class="section-title">Interests and Hobbies</h2>
+        <section class="section" id="interests">
+          <h2 class="section-title"><a class="section-link" href="#interests">Interests and Hobbies</a></h2>
 
           <ol class="olist" type="1">
             <li>Spikeball
