@@ -13,23 +13,103 @@ Last Modified: September 11, 2025
     <meta name="description" content="Homework 1">
     <title>Homework 1</title>
     <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-    <header>
-        <h1>Welcome to Nick DeYoung's CV</h1>
-    </header>
-    <main>
-        <p>Click any page link to view its contents in this window</p>
-    </main>
-    <footer>
-        <nav>
-            <a href="page1.html">Introduction</a> |
-            <a href="page2.html">Career Summary</a> |
-            <a href="page3.html">Education and Qualifications</a> |
-            <a href="page4.html">Interests and Hobbies</a>
-        </nav>
-        <p>&copy; 2023</p>
 
-    </footer>
+    <style>
+        .page {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background: #fafafa;
+        font-family: Helvetica, Arial, sans-serif;
+        }
+
+        .theme {
+        --bar: #e5e5e5;
+        --left: limegreen;
+        --right: lightblue;
+        --visual-w: min(900px, 92vw);
+        --bar-h: 44px;
+        --visual-h: 420px;
+        }
+
+        .visual {
+        width: var(--visual-w);
+        height: var(--visual-h);
+        border: 1px solid #ddd;
+        background: #ffffff;
+        }
+
+        .topbar {
+        height: var(--bar-h);
+        background: var(--bar);
+        display: flex;
+        align-items: center;
+        padding: 0 14px;
+        font-size: 14px;
+        color: #333333;
+        }
+
+        .panels {
+        display: flex;
+        height: calc(var(--visual-h) - var(--bar-h));
+        width: 100%;
+        }
+
+        .panel-left {
+        width: 33.3333%;
+        background: var(--left);
+        display: grid;
+        place-items: center;
+        padding: 16px;
+        text-align: center;
+        color: #072b07;
+        font-weight: 600;
+        }
+
+        .panel-right {
+        width: 66.6667%;
+        background: var(--right);
+        padding: 18px 20px;
+        color: #073b4c;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        }
+
+        .right-title {
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        }
+
+        .headers {
+        margin-top: 6px;
+        display: grid;
+        gap: 8px;
+        }
+
+        .header-item {
+        font-size: 16px;
+        font-weight: 800;
+        }
+    </style>
+</head>
+<body class="page theme">
+  <div class="visual" role="img" aria-label="Three-panel layout mockup">
+    <div class="topbar">(header/navigation area)</div>
+    <div class="panels">
+      <div class="panel-left">
+        (profile/introduction area)
+      </div>
+      <div class="panel-right">
+        <div class="right-title">(main content area)</div>
+        <div class="headers">
+          <div class="header-item">Career Summary</div>
+          <div class="header-item">Education/Qualifications</div>
+          <div class="header-item">Interests/Hobbies</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
