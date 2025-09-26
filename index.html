@@ -1,8 +1,8 @@
 <!--
 Name: Nick DeYoung
 Class: Web Dev
-Assignment: Homework 1
-Last Modified: September 11, 2025 
+Assignment: Homework 2
+Last Modified: September 25, 2025 
 -->
 
 <!DOCTYPE html>
@@ -10,8 +10,8 @@ Last Modified: September 11, 2025
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Homework 1">
-    <title>Homework 1</title>
+    <meta name="description" content="Homework 2">
+    <title>Homework 2</title>
     <link rel="icon" type="image/png" href="favicon.png">
 
     <style>
@@ -30,12 +30,10 @@ Last Modified: September 11, 2025
         --right: lightblue;
         --visual-w: min(900px, 92vw);
         --bar-h: 44px;
-        --visual-h: 420px;
         }
 
         .visual {
         width: var(--visual-w);
-        height: var(--visual-h);
         border: 1px solid #ddd;
         background: #ffffff;
         }
@@ -48,6 +46,23 @@ Last Modified: September 11, 2025
         padding: 0 14px;
         font-size: 14px;
         color: #333333;
+        }
+
+        .nav {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        }
+
+        .nav-link {
+        color: #1a1a1a;
+        text-decoration: none;
+        font-weight: 600;
+        }
+
+        .nav-sep {
+        opacity: 0.5;
+        user-select: none;
         }
 
         .panels {
@@ -75,11 +90,64 @@ Last Modified: September 11, 2025
         display: flex;
         flex-direction: column;
         gap: 12px;
+        align-items: center;
+        text-align: center;
         }
 
-        .right-title {
+        .profile {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .profile-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        box-shadow: 0 0 0 2px rgba(0,0,0,0.08) inset;
+        }
+
+        .profile-name {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .profile-title {
+        font-size: 14px;
         font-weight: 700;
-        letter-spacing: 0.2px;
+        opacity: 0.9;
+        }
+
+        .profile-summary {
+        width: 100%;
+        text-align: left;
+        background: rgba(255,255,255,0.5);
+        border-left: 3px solid rgba(0,0,0,0.25);
+        padding: 10px 12px;
+        margin-top: 8px;
+        line-height: 1.25;
+        }
+
+        .skills-list {
+        list-style: none;
+        margin: 0;
+        padding-left: 1.2em; /* space for custom arrow */
+        }
+
+        .skills-item {
+        position: relative;
+        margin: 4px 0;
+        font-weight: 600;
+        }
+
+        .skills-item::before {
+        content: "➤";
+        position: absolute;
+        left: -1.2em;
         }
 
         .headers {
@@ -96,19 +164,41 @@ Last Modified: September 11, 2025
 </head>
 <body class="page theme">
   <div class="visual" role="img" aria-label="Three-panel layout mockup">
-    <div class="topbar">(header/navigation area)</div>
+    <div class="topbar">
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a><span class="nav-sep">|</span>
+        <a class="nav-link" href="page2.html">Career Summary</a><span class="nav-sep">|</span>
+        <a class="nav-link" href="page3.html">Education and Qualifications</a><span class="nav-sep">|</span>
+        <a class="nav-link" href="page4.html">Interests and Hobbies</a>
+      </nav>
+    </div>
+
     <div class="panels">
-      <div class="panel-left">
-        (profile/introduction area)
-      </div>
-      <div class="panel-right">
-        <div class="right-title">(main content area)</div>
+      <aside class="panel-left">
+        <div class="profile">
+          <img class="profile-img" src="image.jpeg" alt="Nick D" />
+          <div class="profile-name">Nick DeYoung</div>
+          <div class="profile-title">Software Engineer</div>
+          <div class="profile-summary">
+            Nick DeYoung is a dedicated Computer Scientist at Gonzaga University with a strong foundation in software engineering, data-driven problem solving, and system optimization. Specializing in full-stack development, algorithm design, and scalable cloud-based applications, he has demonstrated expertise in both academic research and applied technology. His skill set includes advanced proficiency in Java, Python, C++, and OCaml, as well as hands-on experience with containerized DevOps pipelines, database architecture, and distributed systems. Below is a picture of him, he looks like snoopy.
+          </div>
+        </div>
+      </aside>
+
+      <section class="panel-right">
+
+        <ul class="skills-list">
+          <li class="skills-item">Applied cryptography</li>
+          <li class="skills-item">Compiler/Virtual Machine Construction</li>
+          <li class="skills-item">Functional Programming Paradigms</li>
+        </ul>
+
         <div class="headers">
           <div class="header-item">Career Summary</div>
           <div class="header-item">Education/Qualifications</div>
           <div class="header-item">Interests/Hobbies</div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </body>
