@@ -16,8 +16,8 @@ Last Modified: September 25, 2025
 
     <style>
         .page {
-        min-height: 100vh;
         margin: 0;
+        min-height: 100vh;
         display: grid;
         place-items: center;
         background: #fafafa;
@@ -44,8 +44,8 @@ Last Modified: September 25, 2025
         display: flex;
         align-items: center;
         padding: 0 14px;
-        font-size: 14px;
         color: #333333;
+        font-size: 14px;
         }
 
         .nav {
@@ -67,39 +67,28 @@ Last Modified: September 25, 2025
 
         .panels {
         display: flex;
-        height: calc(var(--visual-h) - var(--bar-h));
         width: 100%;
+        min-height: 360px;
         }
 
         .panel-left {
         width: 33.3333%;
         background: var(--left);
-        display: grid;
-        place-items: center;
-        padding: 16px;
-        text-align: center;
+        padding: 18px;
         color: #072b07;
-        font-weight: 600;
-        }
-
-        .panel-right {
-        width: 66.6667%;
-        background: var(--right);
-        padding: 18px 20px;
-        color: #073b4c;
         display: flex;
         flex-direction: column;
-        gap: 12px;
         align-items: center;
+        gap: 10px;
         text-align: center;
         }
 
         .profile {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
         }
 
         .profile-img {
@@ -112,8 +101,8 @@ Last Modified: September 25, 2025
         }
 
         .profile-name {
-            font-size: 18px;
-            font-weight: 800;
+        font-size: 18px;
+        font-weight: 800;
         }
 
         .profile-title {
@@ -132,10 +121,20 @@ Last Modified: September 25, 2025
         line-height: 1.25;
         }
 
+        .panel-right {
+        width: 66.6667%;
+        background: var(--right);
+        padding: 18px 20px;
+        color: #073b4c;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        }
+
         .skills-list {
         list-style: none;
         margin: 0;
-        padding-left: 1.2em; /* space for custom arrow */
+        padding-left: 1.2em;
         }
 
         .skills-item {
@@ -150,15 +149,52 @@ Last Modified: September 25, 2025
         left: -1.2em;
         }
 
-        .headers {
-        margin-top: 6px;
-        display: grid;
-        gap: 8px;
+        .section {
+        display: block;
         }
 
-        .header-item {
-        font-size: 16px;
+        .section-title {
         font-weight: 800;
+        font-size: 18px;
+        margin-bottom: 8px;
+        color: #063645;
+        }
+
+        .table-card {
+        background: rgba(255,255,255,0.7);
+        border: 1px solid rgba(0,0,0,0.12);
+        border-radius: 10px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+        overflow: hidden;
+        }
+
+        .table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        }
+
+        .table thead th {
+        background: rgba(0,0,0,0.06);
+        font-weight: 800;
+        text-align: left;
+        padding: 10px 12px;
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+        }
+
+        .table tbody td {
+        padding: 10px 12px;
+        vertical-align: top;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .table--striped tbody tr:nth-child(even) {
+        background: rgba(0,0,0,0.04);
+        }
+
+        .stack {
+        display: grid;
+        gap: 12px;
         }
     </style>
 </head>
@@ -180,7 +216,7 @@ Last Modified: September 25, 2025
           <div class="profile-name">Nick DeYoung</div>
           <div class="profile-title">Software Engineer</div>
           <div class="profile-summary">
-            Nick DeYoung is a dedicated Computer Scientist at Gonzaga University with a strong foundation in software engineering, data-driven problem solving, and system optimization. Specializing in full-stack development, algorithm design, and scalable cloud-based applications, he has demonstrated expertise in both academic research and applied technology. His skill set includes advanced proficiency in Java, Python, C++, and OCaml, as well as hands-on experience with containerized DevOps pipelines, database architecture, and distributed systems. Below is a picture of him, he looks like snoopy.
+            Nick DeYoung is a dedicated Computer Scientist at Gonzaga University with a strong foundation in software engineering, data-driven problem solving, and system optimization. Specializing in full-stack development, algorithm design, and scalable cloud-based applications, he has demonstrated expertise in both academic research and applied technology. His skill set includes advanced proficiency in Java, Python, C++, and OCaml, as well as hands-on experience with containerized DevOps pipelines, database architecture, and distributed systems. Above is a picture of him, he looks like snoopy.
           </div>
         </div>
       </aside>
@@ -193,11 +229,130 @@ Last Modified: September 25, 2025
           <li class="skills-item">Functional Programming Paradigms</li>
         </ul>
 
-        <div class="headers">
-          <div class="header-item">Career Summary</div>
-          <div class="header-item">Education/Qualifications</div>
-          <div class="header-item">Interests/Hobbies</div>
-        </div>
+        <section class="section">
+          <h2 class="section-title">Career Summary</h2>
+          <div class="table-card table--striped table--compact">
+            <table class="table" border="2">
+              <thead>
+                <tr>
+                  <th>Role</th>
+                  <th>Company</th>
+                  <th>Years</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Project Manager</td>
+                  <td>Innovatech</td>
+                  <td>2023-Present</td>
+                  <td>Leading cross-functional teams to deliver software projects.</td>
+                </tr>
+                <tr>
+                  <td>Frontend Developer</td>
+                  <td>Webify</td>
+                  <td>2021-2023</td>
+                  <td>Designed user interfaces and improved user experience.</td>
+                </tr>
+                <tr>
+                  <td>Software Engineer</td>
+                  <td>TechCorp</td>
+                  <td>2018-2021</td>
+                  <td>Developed and maintained web applications.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Education and Qualifications</h2>
+          <div class="stack">
+            <div class="table-card table--striped table--compact">
+              <table class="table" border="2">
+                <thead>
+                  <tr>
+                    <th>Degree</th>
+                    <th>Institution</th>
+                    <th>Years</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>B.S. in Computer Science</td>
+                    <td>Gonzaga University</td>
+                    <td>2022-Present</td>
+                    <td>Dean's List; ACM member</td>
+                  </tr>
+                  <tr>
+                    <td>Minor in Mathematics</td>
+                    <td>Gonzaga University</td>
+                    <td>2023-Present</td>
+                    <td>Discrete math, probability</td>
+                  </tr>
+                  <tr>
+                    <td>High School Diploma</td>
+                    <td>Riverside High School</td>
+                    <td>2018-2022</td>
+                    <td>Robotics team captain</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-card table--striped table--compact">
+              <table class="table" border="2">
+                <thead>
+                  <tr>
+                    <th>Skill / Certification</th>
+                    <th>Level</th>
+                    <th>Context / Notes</th>
+                    <th>Year</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Algorithms &amp; Data Structures</td>
+                    <td>Proficient</td>
+                    <td>C++, Python; coding interview prep</td>
+                    <td>2024</td>
+                  </tr>
+                  <tr>
+                    <td>Web Development</td>
+                    <td>Proficient</td>
+                    <td>HTML5, CSS3, JavaScript; basic accessibility</td>
+                    <td>2024</td>
+                  </tr>
+                  <tr>
+                    <td>Java</td>
+                    <td>Intermediate</td>
+                    <td>OOP, unit testing, simple REST clients</td>
+                    <td>2025</td>
+                  </tr>
+                  <tr>
+                    <td>Python</td>
+                    <td>Intermediate</td>
+                    <td>Scripting, pandas, small Flask apps</td>
+                    <td>2025</td>
+                  </tr>
+                  <tr>
+                    <td>Git &amp; GitHub</td>
+                    <td>Proficient</td>
+                    <td>Branching, PR reviews, Actions basics</td>
+                    <td>2024</td>
+                  </tr>
+                  <tr>
+                    <td>AWS Academy Cloud Foundations</td>
+                    <td>In progress</td>
+                    <td>Compute, storage, IAM fundamentals</td>
+                    <td>2025</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
       </section>
     </div>
   </div>
